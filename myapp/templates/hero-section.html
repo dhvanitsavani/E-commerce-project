@@ -1,0 +1,62 @@
+{% extends 'parent.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+        <title>Hero-Section</title>
+    {% endblock %}
+
+    {% block style %}
+        <style>
+            h2{
+                font-size: 35px;
+            }
+            h4{
+                font-size: 24px;
+            }
+            .hero-section{
+                height: 25vw;
+                /* width: 97vw; */
+                background-image: url("/static/images/hero-section-background.jpg");
+                background-size: cover;
+                justify-content: space-between;
+                padding-left: 150px;
+                margin-inline: 30px;
+            }
+
+            .shop-section{
+                width: 27vw;
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-start;
+            }
+            .hero-section a{
+                background-color: #fff;
+                color: black;
+                padding: 12px;
+                font-size: 22px;
+                margin-left: 30px;
+            }
+            .hero-section .hero-section-person{
+                height: 25vw;
+            }
+        </style>
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+        <section class="hero-section flex">
+            <div class="shop-section flex">
+                <h2>Shop Smart, Live Well.</h2>
+                <h4>Welcome to our Shop, we provide premium quality wears in best prices</h4>
+                <a href="#">Shop now</a>
+            </div>
+            <img src="{% static 'images/hero-section-person.jpg' %}" alt="Hero-Section" class="hero-section-person">
+        </section>
+    {% endblock %}
+</body>
+</html>

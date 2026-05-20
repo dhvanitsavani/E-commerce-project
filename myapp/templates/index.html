@@ -1,11 +1,25 @@
+{% extends 'parent.html' %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    {% block title %}
+        <title>Homepage</title>
+    {% endblock %}
+
+    {% block style %}
+        <style>
+
+        </style>
+    {% endblock %}
 </head>
 <body>
-    <h1>Initialization.</h1>
+    {% block content %}
+        {% include 'nav.html' %}
+        {% include 'hero-section.html' %}
+        <h1 style="margin: 50px; font-size: 40px;">Initialization.</h1>
+    {% endblock %}
 </body>
 </html>

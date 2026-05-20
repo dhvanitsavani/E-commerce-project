@@ -1,0 +1,109 @@
+{% extends 'parent.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+        <title>Navbar</title>
+    {% endblock %}
+    
+    {% block style %}
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                font-size: 16px;
+            }
+            
+            a{
+                color: #fff;
+                text-decoration: none;
+            }
+            button{
+                border: solid 0 black;
+            }
+
+            .flex{
+                display: flex;
+                align-items: center;
+            }
+
+            .nav-section{
+                height: 65px;
+                background-image: url("/static/images/navbar-background-1-b.jpg");
+                background-size: cover;
+                justify-content: space-between;
+            }
+            
+            .nav-section .logo{
+                height: 65px;
+                width: 75px;
+                object-fit: cover;
+            }
+
+            .nav-section .part{
+                gap: 50px;
+            }
+            .nav-section .part-2{
+                gap: 0;
+            }
+            .nav-section .part-3{
+                margin-right: 30px;
+            }
+            .nav-section a{
+                font-size: 20px;
+            }
+            .nav-section select{
+                height: 40px;
+                width: 12vw;
+                padding: 5px;
+            }
+            .nav-section .search-bar{
+                height: 40px;
+                width: 35vw;
+                padding-left: 15px;
+            }
+            .nav-section .search-icon, .nav-section .search-button{
+                height: 40px;
+                width: 40px;
+            }
+            .nav-section .search-icon{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    {% endblock %}
+</head>
+<body>
+    
+    {% block content %}
+        <nav class="nav-section flex">
+            <div class="part-1 part flex">
+                <img src="{% static 'images/logo-4.png' %}" alt="Logo" class="logo">
+                <a href="#">Home</a>
+                <select name="categories" id="categories">
+                    <option value="shirts">Shirts</option>
+                    <option value="t-shirts">T-shirts</option>
+                    <option value="full_sleeve">Full-Sleeve</option>
+                    <option value="pants">Pants</option>
+                    <option value="round_neck">Round-Neck</option>
+                    <option value="shorts">Shorts</option>
+                </select>
+            </div>
+            <div class="part-2 part flex">
+                <input type="search" id="search-bar" class="search-bar" placeholder="Search Items">
+                <button class="search-button"><i class="fa-solid fa-magnifying-glass search-icon"></i></button>
+            </div>
+            <div class="part-3 part flex">
+                <a href="#">Signup</a>
+                <a href="#">Login</a>
+            </div>
+        </nav>
+    {% endblock %}
+
+</body>
+</html>
