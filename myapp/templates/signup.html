@@ -1,0 +1,68 @@
+{% extends 'parent.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+        <title>Signup</title>
+    {% endblock %}
+    {% block style %}
+        <style>
+            .signup-section{
+                margin-top: 50px;
+            }
+        </style>
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+        {% include 'nav.html' %}
+        <div class="signup-section">
+            <form action="{% url 'signup' %}" method="post" class="signup-form">
+                {% csrf_token %}
+                <h2>Create Account</h2>
+                <div class="input-div">
+                    <label for="email">Enter Email address</label>
+                    <input type="text" id="email" name="email">
+                </div>
+
+                <div class="input-div">
+                    <label for="name">Enter Full Name</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                
+                <div class="input-div">
+                    <label for="mobile">Enter Mobile</label>
+                    <input type="number" id="mobile" name="mobile">
+                </div>
+
+                <div class="input-div">
+                    <label for="age">Enter Age</label>
+                    <input type="number" id="age" name="age">
+                </div>
+                
+                <div class="input-div">
+                    <label for="password">Create a Strong Password</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                
+                <div class="input-div">
+                    <label for="cpassword">Confirm Password</label>
+                    <input type="password" id="cpassword" name="cpassword">
+                </div>
+                
+                <div class="input-div submit-button-div">
+                    {% if error_message %}
+                    <p class="error-message">{{error_message}}</p>
+                    {% endif %}
+                    <button type="submit" class="submit-button">Signup</button>
+                </div>
+
+                <a href="{% url 'login' %}" class="forgot-password-a">Already have an account ?</a>
+            </form>
+        </div>
+    {% endblock %}
+</body>
+</html>

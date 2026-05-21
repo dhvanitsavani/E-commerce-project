@@ -1,0 +1,95 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+}
+
+a{
+    color: #000;
+    text-decoration: none;
+}
+
+form{
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: auto;
+}
+
+h1, h2, h3{
+    font-family: 'Poppins', sans-serif;
+}
+
+h4, h5, h6{
+    font-family: 'Roboto', sans-serif;
+}
+
+h1{
+    font-size: 40px;
+}
+h2{
+    font-size: 35px;
+}
+h3{
+    font-size: 30px;
+}
+h4{
+    font-size: 24px;
+}
+h5{
+    font-size: 22px;
+}
+h6{
+    font-size: 20px;
+}
+
+button{
+    border: solid 0 black;
+}
+
+input{
+    height: 35px;
+    font-size: 15px;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+}
+
+.submit-button{
+    color: #fff;
+    background-color: #35a;
+    padding-block: 10px ;
+}
+
+.submit-button-div{
+    margin-block: 10px;
+}
+
+.forgot-password-a{
+    width: 100%;
+    color: #35a;
+    text-align: center;
+    border: solid 1px #35a;
+    align-self: center;
+    padding-block: 10px;
+}
+
+.input-div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.error-message{
+    font-size: 15px;
+    color: #b00020;
+}
+
+button:hover{
+    cursor: pointer;
+}
