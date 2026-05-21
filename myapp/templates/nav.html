@@ -13,30 +13,23 @@
     {% block style %}
         <style>
             .nav-section{
-                height: 65px;
+                height: 55px;
                 background-image: url("/static/images/navbar-background-1-b.jpg");
                 background-size: cover;
                 justify-content: space-between;
+                padding-right: 25px;
             }
             
             .nav-section .logo{
-                height: 65px;
-                width: 75px;
-                object-fit: cover;
+                height: 55px;
             }
-
-            .nav-section .part{
-                gap: 50px;
-            }
-            .nav-section .part-2{
-                gap: 0;
-            }
-            .nav-section .part-3{
+            .nav-section .logo-a{
+                height: 55px;
                 margin-right: 30px;
             }
             .nav-section a{
                 color: #fff;
-                font-size: 20px;
+                font-size: 16px;
             }
             .nav-section select{
                 height: 40px;
@@ -44,13 +37,18 @@
                 padding: 5px;
             }
             .nav-section .search-bar{
-                height: 40px;
-                width: 35vw;
+                height: 35px;
+                width: 25vw;
+                border: solid 0 black;
                 padding-left: 15px;
             }
+            .nav-section .search-bar-div{
+                margin-inline: 30px 120px;
+            }
             .nav-section .search-icon, .nav-section .search-button{
-                height: 40px;
-                width: 40px;
+                height: 35px;
+                width: 35px;
+                border-left: solid 1px #bbb;
             }
             .nav-section .search-icon{
                 display: flex;
@@ -64,32 +62,29 @@
     
     {% block content %}
         <nav class="nav-section flex">
-            <div class="part-1 part flex">
-                <a href="/"><img src="{% static 'images/logo-4.png' %}" alt="Logo" class="logo"></a>
-                <a href="/">Home</a>
-                <select name="categories" id="categories">
-                    <option value="shirts">Shirts</option>
-                    <option value="t-shirts">T-shirts</option>
-                    <option value="full_sleeve">Full-Sleeve</option>
-                    <option value="pants">Pants</option>
-                    <option value="round_neck">Round-Neck</option>
-                    <option value="shorts">Shorts</option>
-                </select>
-            </div>
-            <div class="part-2 part flex">
+            <a href="/" class="logo-a"><img src="{% static 'images/logo-7.png' %}" alt="Logo" class="logo"></a>
+
+            <a href="#">Men</a>
+            <a href="#">Women</a>
+            <a href="#">Kids</a>
+            <a href="#">Professional</a>
+            <a href="#">Rich</a>
+            <a href="#">Wedding</a>
+            <a href="#">Outfit</a>
+
+            <div class="flex search-bar-div">
                 <input type="search" id="search-bar" class="search-bar" placeholder="Search Items">
                 <button class="search-button"><i class="fa-solid fa-magnifying-glass search-icon"></i></button>
             </div>
-            <div class="part-3 part flex">
-                {% if request.session.email %}
-                    <a href="#">Cart</a>
-                    <a href="{% url 'logout' %}">Logout</a>
-                    <a href="#">Profile</a>
-                {% else %}
-                    <a href="{% url 'signup' %}">Signup</a>
-                    <a href="{% url 'login' %}">Login</a>
-                {% endif %}
-            </div>
+            
+            {% if request.session.email %}
+                <a href="#">Cart</a>
+                <a href="{% url 'logout' %}">Logout</a>
+                <a href="#">Profile</a>
+            {% else %}
+                <a href="{% url 'signup' %}">Signup</a>
+                <a href="{% url 'login' %}">Login</a>
+            {% endif %}
         </nav>
     {% endblock %}
 

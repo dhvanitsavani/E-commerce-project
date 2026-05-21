@@ -24,7 +24,7 @@
             }
 
             .shop-section{
-                width: 27vw;
+                width: 35vw;
                 flex-direction: column;
                 gap: 20px;
                 align-items: flex-start;
@@ -39,6 +39,13 @@
             .hero-section .hero-section-person{
                 height: 25vw;
             }
+
+            .slogun-main-line{
+                color: #09309a;
+            }
+            .slogun-sub-line{
+                color: #090909;
+            }
         </style>
     {% endblock %}
 </head>
@@ -46,9 +53,9 @@
     {% block content %}
         <section class="hero-section flex">
             <div class="shop-section flex">
-                <h2>Shop Smart, Live Well.</h2>
-                <h4>Welcome to our Shop, we provide premium quality wears in best prices</h4>
-                <a href="#">Shop now</a>
+                <h2 class="slogun-main-line">Shop Smart, Live Well</h2>
+                <h4 class="slogun-sub-line">Branded & Professional Outfits, Check it out.</h4>
+                <a href="#">Shop now <i class="fa-solid fa-arrow-right"></i></a>
             </div>
             <img src="{% static 'images/hero-section-person.jpg' %}" alt="Hero-Section" class="hero-section-person">
         </section>
