@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block title %}
-        <title>Login</title>
+        <title>Recover Accont</title>
     {% endblock %}
     {% block style %}
         <style>
@@ -18,28 +18,22 @@
     {% block content %}
         {% include 'nav.html' %}
         <div class="login-section">
-            <form action="{% url 'login' %}" method="post" class="login-form">
+            <form action="{% url 'verify-otp' %}" method="post" class="verify-otp-form">
                 {% csrf_token %}
-                <h2>Log into ShopiGo</h2>
+                <h2>Recover Account</h2>
                 <div class="input-div">
-                    <label for="email">Enter Email address</label>
-                    <input type="text" id="email" name="email">
-                </div>
-
-                <div class="input-div">
-                    <label for="password">Enter Password</label>
-                    <input type="password" id="password" name="password">
+                    <label for="otp">Enter OTP</label>
+                    <input type="number" id="otp" name="otp">
                 </div>
                 
                 <div class="input-div submit-button-div">
                     {% if error_message %}
                     <p class="error-message">{{error_message}}</p>
                     {% endif %}
-                    <button type="submit" class="submit-button">Login</button>
-                    <a href="{% url 'forgot-password' %}" class="forgot-password-a">Forgot Password ?</a>
+                    <button type="submit" class="submit-button">Verify OTP</button>
                 </div>
 
-                <a href="{% url 'signup' %}" class="create-new-acc-a">New on ShopiGo ?</a>
+                <a href="{% url 'login' %}" class="create-new-acc-a">Back to Login</a>
             </form>
         </div>
     {% endblock %}

@@ -67,15 +67,20 @@ input{
 }
 
 .submit-button-div{
-    margin-block: 10px;
+    margin-block: 15px;
 }
 
 .forgot-password-a{
+    color: #35a;
+    align-self: center;
+    margin-block: 10px;
+}
+
+.create-new-acc-a{
     width: 100%;
     color: #35a;
     text-align: center;
     border: solid 1px #35a;
-    align-self: center;
     padding-block: 10px;
 }
 
@@ -92,4 +97,12 @@ input{
 
 button:hover{
     cursor: pointer;
+}
+
+.login-section{
+    margin-top: 80px;
+}
+
+.signup-section{
+    margin-top: 50px;
 }
