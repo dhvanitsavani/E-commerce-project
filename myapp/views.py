@@ -54,6 +54,7 @@ def login(request):
             user = User.objects.get(email = request.POST['email'])
             if request.POST['password'] == user.password:
                 request.session['email'] = user.email
+                request.session['profile_image'] = user.profile_image.url
                 return redirect('index')
             else:
                 error_message = "Incorrect Password"

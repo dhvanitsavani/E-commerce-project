@@ -55,6 +55,11 @@
                 justify-content: center;
                 align-items: center;
             }
+            .nav-section .profile-image{
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+            }
         </style>
     {% endblock %}
 </head>
@@ -78,9 +83,9 @@
             </div>
             
             {% if request.session.email %}
-                <a href="#">Cart</a>
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
                 <a href="{% url 'logout' %}">Logout</a>
-                <a href="#">Profile</a>
+                <a href="#"><img src="{{request.session.profile_image}}" alt="Profile" class="profile-image"></a>
             {% else %}
                 <a href="{% url 'signup' %}">Signup</a>
                 <a href="{% url 'login' %}">Login</a>
