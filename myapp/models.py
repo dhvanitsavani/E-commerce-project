@@ -31,11 +31,20 @@ class Product(models.Model):
     name = models.CharField(max_length=100)
     price = models.DecimalField(max_digits=9, decimal_places=2)
     description = models.TextField()
+    product_image = models.ImageField(upload_to='product-images/', default='defaults/user-icon-1.png')
     details = models.JSONField(default=dict, blank=True)
     available_no = models.PositiveIntegerField(default=0)
 
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=['seller', 'name'],
+                name='unique_seller_product'
+            )
+        ]
+
     def __str__(self):
-        return self.name
+        return f"{self.id} - {self.seller.name} - {self.name}"
     
     def clean(self):
         if self.seller.user_type != "seller":

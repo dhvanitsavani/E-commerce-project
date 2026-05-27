@@ -17,6 +17,31 @@
     {% block style %}{% endblock %}
 </head>
 <body>
+    <nav class="nav-section flex">
+        <a href="/" class="logo-a"><img src="{% static 'images/logo-1.png' %}" alt="Logo" class="logo"></a>
+
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">Kids</a>
+        <a href="#">Professional</a>
+        <a href="#">Rich</a>
+        <a href="#">Wedding</a>
+        <a href="#">Outfit</a>
+
+        <div class="flex search-bar-div">
+            <input type="search" id="search-bar" class="search-bar" placeholder="Search Items">
+            <button class="search-button"><i class="fa-solid fa-magnifying-glass search-icon"></i></button>
+        </div>
+        
+        {% if request.session.email %}
+            <a href="#"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+            <a href="{% url 'logout' %}">Logout</a>
+            <a href="#"><img src="{{request.session.profile_image}}" alt="Profile" class="profile-image"></a>
+        {% else %}
+            <a href="{% url 'signup' %}">Signup</a>
+            <a href="{% url 'login' %}">Login</a>
+        {% endif %}
+    </nav>
     
     {% block content %}
     {% endblock %}

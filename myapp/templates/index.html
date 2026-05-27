@@ -1,4 +1,5 @@
 {% extends 'parent.html' %}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,25 +12,31 @@
 
     {% block style %}
         <style>
-
+        
         </style>
     {% endblock %}
 </head>
 <body>
     {% block content %}
-        {% include 'nav.html' %}
-        {% include 'hero-section.html' %}
-        <h1 style="margin: 50px; font-size: 40px;">Initialization.</h1>
-        
-        <main class="main-products-section">
-            <div class="products-section-container flex">
-                {% for product in products %}
-                    <div class="product-card flex">
-                        
-                    </div>
-                {% endfor %}
+        <section class="hero-slider">
+
+            <div class="slides">
+                <img src="{% static 'images/hero-section-1.png' %}" class="slide">
+                <img src="{% static 'images/hero-section-2.png' %}" class="slide">
+                <img src="{% static 'images/hero-section-3.png' %}" class="slide">
             </div>
-        </main>
+
+            <button class="btn prev">&#10094;</button>
+            <button class="btn next">&#10095;</button>
+
+        </section>
+        
+        <a href="#" style="background-color: wheat; padding: 10px; margin: 30px;">Add Products</a>
+        {% if error_ %}
+            <h4 style="margin-left: 30px;">{{error_}}</h4>
+        {% endif %}
+        
     {% endblock %}
+    
 </body>
 </html>

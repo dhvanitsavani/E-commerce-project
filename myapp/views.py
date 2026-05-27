@@ -1,9 +1,57 @@
 from django.shortcuts import render, redirect
-from .models import User
+from .models import User, Product
 import random
 import re
 from django.core.mail import send_mail
 from django.conf import settings
+import os
+
+products_list_ = [
+    {
+        'name': 'U.S. Polo Assn. Denim Co. Solid Regular Fit Track',
+        'price': 2300,
+        'description': 'Amplify your wardrobe with this pair of green regular fit trackpants from U.S. Polo Assn. Denim Co.. Tailored to sartorial perfection from premium quality fabric, it assures a soft and soothing touch against the skin.',
+        'product_image': os.path.join(settings.MEDIA_ROOT, 'product-temp', 'product-7.webp'),
+        'details': {
+            'Color': 'Grass Green',
+            'Fit': 'Regular',
+            'Wash': 'Machine Wash',
+            'Waist Rise': 'Mid Rise'
+        },
+        'available_no': 6000
+    },
+    {
+        'name': 'U.S. Polo Assn. Solid Cotton Tapered Fit Men\'s Jeans',
+        'price': 3100,
+        'description': 'These solid jeans for men are shaped in the Brandon slim-tapered fit, offering a modern, casual silhouette with effortless everyday appeal.',
+        'product_image': os.path.join(settings.MEDIA_ROOT, 'product-temp', 'product-8.webp'),
+        'details': {
+            'Color': 'Black',
+            'Fit': 'Regular',
+            'Length': 'Full',
+            'Pattern': 'Solid',
+            'Occasion': 'Casual',
+            'Wash': 'Machine Wash',
+            'Waist Rise': 'Mid Rise'
+        },
+        'available_no': 12000
+    },
+    {
+        'name': 'U.S. Polo Assn. Harold Slim Straight Fit Blue Jeans',
+        'price': 3400,
+        'description': 'Casual solid jeans for men that blend comfort and style. Perfect for everyday wear and laid-back outings.',
+        'product_image': os.path.join(settings.MEDIA_ROOT, 'product-temp', 'product-9.webp'),
+        'details': {
+            'Color': 'Navy Blue',
+            'Fit': 'Regular',
+            'Length': 'Regular',
+            'Occasion': 'Casual',
+            'Wash': 'Stone Wash',
+            'Waist Rise': 'Mid Rise'
+        },
+        'available_no': 11000
+    }
+]
 
 def is_valid_email(email):
     email_pattern = r'^\w+@\w+\.\w+\s*$'
@@ -11,6 +59,24 @@ def is_valid_email(email):
         return True
     else:
         return False
+
+def add_products(request):
+    try:
+        for product in products_list_:
+            Product.objects.create(
+                seller = User.objects.get(email = 'savanidhvanit@gmail.com'),
+                name = product['name'],
+                price = product['price'],
+                description = product['description'],
+                product_image = product['product_image'],
+                details = product['details'],
+                available_no = product['available_no']
+            )
+        return render(request, 'index.html')
+    except Exception as e:
+        error_ = e
+        return render(request, 'index.html', {'error_': error_})
+    return redirect('index')
 
 def index(request):
     products = []

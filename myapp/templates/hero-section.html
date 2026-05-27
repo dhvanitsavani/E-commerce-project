@@ -13,51 +13,15 @@
     {% block style %}
         <style>
             
-            .hero-section{
-                height: 25vw;
-                /* width: 97vw; */
-                background-image: url("/static/images/hero-section-background.jpg");
-                background-size: cover;
-                justify-content: space-between;
-                padding-left: 150px;
-                margin-inline: 30px;
-            }
+            
 
-            .shop-section{
-                width: 35vw;
-                flex-direction: column;
-                gap: 20px;
-                align-items: flex-start;
-            }
-            .hero-section a{
-                background-color: #fff;
-                color: black;
-                padding: 12px;
-                font-size: 22px;
-                margin-left: 30px;
-            }
-            .hero-section .hero-section-person{
-                height: 25vw;
-            }
-
-            .slogun-main-line{
-                color: #09309a;
-            }
-            .slogun-sub-line{
-                color: #090909;
-            }
         </style>
     {% endblock %}
 </head>
 <body>
     {% block content %}
         <section class="hero-section flex">
-            <div class="shop-section flex">
-                <h2 class="slogun-main-line">Shop Smart, Live Well</h2>
-                <h4 class="slogun-sub-line">Branded & Professional Outfits, Check it out.</h4>
-                <a href="#">Shop now <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-            <img src="{% static 'images/hero-section-person.jpg' %}" alt="Hero-Section" class="hero-section-person">
+            <img src="{% static 'images/hero-section-3.png' %}" alt="Hero Section" class="hero-section-image">
         </section>
     {% endblock %}
 </body>
