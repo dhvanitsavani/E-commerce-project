@@ -1,15 +1,15 @@
-const slides = document.querySelector('.slides');
-const slide = document.querySelectorAll('.slide');
+const hero_images = document.querySelector('.hero-images');
+const hero_image = document.querySelectorAll('.hero-image');
 
-const nextBtn = document.querySelector('.next');
-const prevBtn = document.querySelector('.prev');
+const next_button = document.querySelector('.next');
+const prev_button = document.querySelector('.prev');
 
 let index = 0;
-const totalSlides = slide.length;
+const total_images = hero_image.length;
 
 /* UPDATE SLIDER */
 function updateSlider(){
-    slides.style.transform = `translateX(-${index * 100}%)`;
+    hero_images.style.transform = `translateX(-${index * 100}%)`;
 }
 
 /* NEXT */
@@ -17,7 +17,7 @@ function nextSlide(){
 
     index++;
 
-    if(index >= totalSlides){
+    if(index >= total_images){
     index = 0;
     }
 
@@ -30,15 +30,15 @@ function prevSlide(){
     index--;
 
     if(index < 0){
-    index = totalSlides - 1;
+    index = total_images - 1;
     }
 
     updateSlider();
 }
 
 /* BUTTON EVENTS */
-nextBtn.addEventListener('click', nextSlide);
-prevBtn.addEventListener('click', prevSlide);
+next_button.addEventListener('click', nextSlide);
+prev_button.addEventListener('click', prevSlide);
 
 /* AUTO SLIDE */
-setInterval(nextSlide, 4000);
+setInterval(nextSlide, 4500);

@@ -12,29 +12,28 @@
 
     {% block style %}
         <style>
-        
+
         </style>
     {% endblock %}
 </head>
 <body>
     {% block content %}
-        <section class="hero-slider">
-
-            <div class="slides">
-                <img src="{% static 'images/hero-section-1.png' %}" class="slide">
-                <img src="{% static 'images/hero-section-2.png' %}" class="slide">
-                <img src="{% static 'images/hero-section-3.png' %}" class="slide">
+    
+        <section class="hero-section">
+            <div class="hero-images">
+                <a href="#"><img src="{% static 'images/hero-section-1.png' %}" alt="hero-image" class="hero-image"></a>
+                <a href="#"><img src="{% static 'images/hero-section-2.png' %}" alt="hero-image" class="hero-image"></a>
+                <a href="#"><img src="{% static 'images/hero-section-3.png' %}" alt="hero-image" class="hero-image"></a>
             </div>
 
-            <button class="btn prev">&#10094;</button>
-            <button class="btn next">&#10095;</button>
-
+            <button class="hero-slider-button prev">&#10094;</button>
+            <button class="hero-slider-button next">&#10095;</button>
         </section>
-        
-        <a href="#" style="background-color: wheat; padding: 10px; margin: 30px;">Add Products</a>
+
+        <!-- <a href="#" style="background-color: wheat; padding: 10px; margin: 30px;">Add Products</a>
         {% if error_ %}
             <h4 style="margin-left: 30px;">{{error_}}</h4>
-        {% endif %}
+        {% endif %} -->
         
     {% endblock %}
     
