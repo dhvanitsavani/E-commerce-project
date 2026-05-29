@@ -17,6 +17,7 @@
     {% block style %}{% endblock %}
 </head>
 <body>
+    {% block navbar %}
     <nav class="nav-section flex">
         <a href="/" class="logo-a"><img src="{% static 'images/logo-1.png' %}" alt="Logo" class="logo"></a>
 
@@ -24,9 +25,8 @@
         <a href="#">Women</a>
         <a href="#">Kids</a>
         <a href="#">Professional</a>
-        <a href="#">Rich</a>
+        <a href="#">Old Money</a>
         <a href="#">Wedding</a>
-        <a href="#">Outfit</a>
 
         <div class="flex search-bar-div">
             <input type="search" id="search-bar" class="search-bar" placeholder="Search Items">
@@ -42,6 +42,7 @@
             <a href="{% url 'login' %}">Login</a>
         {% endif %}
     </nav>
+    {% endblock %}
     
     {% block content %}
     {% endblock %}

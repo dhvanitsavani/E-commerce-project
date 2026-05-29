@@ -79,9 +79,7 @@ def add_products(request):
     return redirect('index')
 
 def index(request):
-    products = []
-    for i in range(12):
-        products.append(i)
+    products = Product.objects.all()
     return render(request, 'index.html', {'products': products})
 
 def signup(request):

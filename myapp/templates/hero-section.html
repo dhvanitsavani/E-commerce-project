@@ -7,22 +7,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block title %}
-        <title>Hero-Section</title>
+        <title>Hero Section</title>
     {% endblock %}
 
     {% block style %}
         <style>
-            
-            
 
         </style>
     {% endblock %}
 </head>
 <body>
-    {% block content %}
-        <section class="hero-section flex">
-            <img src="{% static 'images/hero-section-3.png' %}" alt="Hero Section" class="hero-section-image">
-        </section>
+    {% block navbar %}
     {% endblock %}
+    {% block content %}
+    <section class="hero-section">
+        <div class="hero-images">
+            <a href="#"><img src="{% static 'images/hero-section-1.png' %}" alt="hero-image" class="hero-image"></a>
+            <a href="#"><img src="{% static 'images/hero-section-2.png' %}" alt="hero-image" class="hero-image"></a>
+            <a href="#"><img src="{% static 'images/hero-section-3.png' %}" alt="hero-image" class="hero-image"></a>
+        </div>
+
+        <button class="hero-slider-button prev">&#10094;</button>
+        <button class="hero-slider-button next">&#10095;</button>
+    </section>
+
+    {% endblock %}
+    
 </body>
 </html>

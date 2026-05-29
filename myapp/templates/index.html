@@ -12,29 +12,74 @@
 
     {% block style %}
         <style>
+            .products-section{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 25px;
+                padding-inline: 35px;
+                padding-block: 15px;
+            }
 
+            .product-card{
+                height: 415px;
+                width: 270px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px;
+            }
+
+            .product-card img{
+                height: 290px;
+                width: 100%;
+            }
+
+            .product-card .name-div{
+                height: 54px;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                /* padding-block: 10px; */
+            }
+
+            .product-card .company-name{
+                font-size: 20px;
+            }
+
+            .product-card .name{
+                color: #333;
+                font-size: 15px;
+            }
+
+            .product-card .price{
+                font-size: 15px;
+                color: #111;
+                font-weight: bold;
+            }
         </style>
     {% endblock %}
 </head>
 <body>
     {% block content %}
-    
-        <section class="hero-section">
-            <div class="hero-images">
-                <a href="#"><img src="{% static 'images/hero-section-1.png' %}" alt="hero-image" class="hero-image"></a>
-                <a href="#"><img src="{% static 'images/hero-section-2.png' %}" alt="hero-image" class="hero-image"></a>
-                <a href="#"><img src="{% static 'images/hero-section-3.png' %}" alt="hero-image" class="hero-image"></a>
-            </div>
-
-            <button class="hero-slider-button prev">&#10094;</button>
-            <button class="hero-slider-button next">&#10095;</button>
-        </section>
-
+        {% include 'hero-section.html' %}
         <!-- <a href="#" style="background-color: wheat; padding: 10px; margin: 30px;">Add Products</a>
         {% if error_ %}
             <h4 style="margin-left: 30px;">{{error_}}</h4>
         {% endif %} -->
         
+        <main class="products-section">
+            {% for product in products %}
+                <a href="#" class="product-card">
+                    <img src="{{product.product_image.url}}" alt="Product Image">
+                    <div class="name-div">
+                    <h4 class="company-name">{{product.company_name}}</h4>
+                    <p class="name">{{product.name}}</p>
+                    </div>
+                    <p class="price">{{product.price}} Rs.</p>
+                </a>
+            {% endfor %}
+        </main>
+
     {% endblock %}
     
 </body>

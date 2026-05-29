@@ -16,7 +16,6 @@
 </head>
 <body>
     {% block content %}
-        {% include 'nav.html' %}
         <div class="login-section">
             <form action="{% url 'verify-otp' %}" method="post" class="verify-otp-form">
                 {% csrf_token %}

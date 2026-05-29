@@ -16,7 +16,6 @@
 </head>
 <body>
     {% block content %}
-        {% include 'nav.html' %}
         <div class="signup-section">
             <form action="{% url 'signup' %}" method="post" class="signup-form">
                 {% csrf_token %}
