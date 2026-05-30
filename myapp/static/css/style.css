@@ -2,9 +2,27 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    color: #0a0a0a;
+    color: var(--lighter-black-1);
     font-size: 15px;
     font-family: 'Inter', sans-serif;
+}
+
+:root{
+    --full-white: #fff;
+    --darker-white-1: #eee;
+    --darker-white-2: #bbb;
+    --full-black: #000;
+    --lighter-black-1: #0a0a0a;
+    --lighter-black-2: #111;
+    --lighter-black-3: #333;
+    --lighter-black-4: #666;
+    --overlay-black-1: rgba(0, 0, 0, 0.05); 
+    --submit-button-background-color: #3056a6;
+    --error-message-color: #b00020;
+    --navbar-background-color: #09192b;
+    --footer-background-color-1: #374759;
+    --footer-background-color-2: #213143;
+    
 }
 
 a{
@@ -71,8 +89,8 @@ h6{
 }
 
 .submit-button{
-    color: #fff;
-    background-color: #35a;
+    color: var(--full-white);
+    background-color: var(--submit-button-background-color);
     padding-block: 10px ;
 }
 
@@ -81,22 +99,22 @@ h6{
 }
 
 .forgot-password-a{
-    color: #35a;
+    color: var(--submit-button-background-color);
     align-self: center;
     margin-block: 10px;
 }
 
 .create-new-acc-a{
     width: 100%;
-    color: #35a;
+    color: var(--submit-button-background-color);
     text-align: center;
-    border: solid 1px #35a;
+    border: solid 1px var(--submit-button-background-color);
     padding-block: 10px;
 }
 
 .error-message{
     font-size: 15px;
-    color: #b00020;
+    color: var(--error-message-color);
 }
 
 button:hover{
@@ -107,8 +125,7 @@ button:hover{
 
 .nav-section{
     height: 55px;
-    background-image: url("/static/images/navbar-background-1-b.jpg");
-    background-size: cover;
+    background-color: var(--navbar-background-color);
     justify-content: space-between;
     padding-right: 25px;
 }
@@ -122,14 +139,14 @@ button:hover{
 }
 
 .nav-section a{
-    color: #fff;
+    color: var(--full-white);
     font-size: 16px;
 }
 
 .nav-section .search-bar{
     height: 35px;
     width: 25vw;
-    border: solid 0 black;
+    border: none;
     padding-left: 15px;
 }
 .nav-section .search-bar-div{
@@ -141,7 +158,7 @@ button:hover{
     width: 35px;
 }
 .nav-section .search-button{
-    border-left: solid 1px #bbb;
+    border-left: solid 1px var(--darker-white-2);
 }
 .nav-section .search-icon{
     display: flex;
@@ -171,7 +188,7 @@ body{
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.05);
+    background: var(--overlay-black-1);
     z-index: 1;
 }
 
@@ -188,7 +205,7 @@ body{
 }
 
 .hero-slider-button{
-    color: #000;
+    color: var(--full-black);
     font-size: 35px;
     background: none;
     border-radius: 50%;
@@ -244,13 +261,13 @@ body{
 }
 
 .product-card .name{
-    color: #333;
+    color: var(--lighter-black-3);
     font-size: 15px;
 }
 
 .product-card .price{
     font-size: 15px;
-    color: #111;
+    color: var(--lighter-black-2);
     font-weight: bold;
 }
 
@@ -261,18 +278,18 @@ body{
 }
 
 .footer-section *{
-    color: #fff;
+    color: var(--full-white);
 }
 
 .footer-section .back-to-top-button{
     width: 100%;
-    background-color: #37475a;
+    background-color: var(--footer-background-color-1);
     padding: 15px;
 }
 
 .footer-section .footer-quick-links{
     width: 100%;
-    background-color: #213143;
+    background-color: var(--footer-background-color-2);
     justify-content: center;
     align-items: flex-start;
     gap: 100px;
@@ -295,8 +312,8 @@ body{
 }
 
 .footer-section .sub-footer{
-    background-color: #213143;
-    border-top: solid 1px #666;
+    background-color: var(--footer-background-color-2);
+    border-top: solid 1px var(--lighter-black-4);
     flex-direction: column;
     gap: 20px;
     padding-block: 30px;
@@ -306,18 +323,22 @@ body{
     gap: 20px;
 }
 
+.footer-section .social-media-icon{
+    font-size: 26px;
+}
+
 .footer-section .logo{
-    height: 55px;
+    height: 50px;
 }
 
 /* ======================================================= Login Section ======================================================= */
 
 .login-section{
-    margin-top: 80px;
+    margin-block: 80px;
 }
 
 /* ======================================================= Signup Section ======================================================= */
 
 .signup-section{
-    margin-top: 50px;
+    margin-block: 50px;
 }

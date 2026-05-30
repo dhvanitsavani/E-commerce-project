@@ -17,13 +17,13 @@
     {% block style %}{% endblock %}
     <style>
         
-
     </style>
 </head>
 <body>
+    <!-- Navbar -->
     {% block navbar %}
     <nav class="nav-section flex">
-        <a href="/" class="logo-a"><img src="{% static 'images/logo-1.png' %}" alt="Logo" class="logo"></a>
+        <a href="/" class="logo-a"><img src="{% static 'images/logo-3.png' %}" alt="Logo" class="logo"></a>
 
         <a href="#">Men</a>
         <a href="#">Women</a>
@@ -48,9 +48,11 @@
     </nav>
     {% endblock %}
     
+    <!-- Main Content -->
     {% block content %}
     {% endblock %}
 
+    <!-- Footer Part -->
     {% block footer %}
     <footer class="footer-section">
         <button class="back-to-top-button">Back to top</button>
@@ -94,13 +96,13 @@
         
         <div class="sub-footer flex">
             <div class="social-media-div flex">
-                <img src="{% static 'images/logo-1.png' %}" alt="Logo" class="logo">
-                <a href="#">Insta</a>
-                <a href="#">Twitter</a>
-                <a href="#">Facebook</a>
-                <a href="#">Youtube</a>
+                <img src="{% static 'images/logo-2.png' %}" alt="Logo" class="logo">
+                <a href="#"><i class="fa-brands fa-instagram social-media-icon"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter social-media-icon"></i></a>
+                <a href="#"><i class="fa-brands fa-square-facebook social-media-icon"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube social-media-icon"></i></a>
             </div>
-            <div class="copyright-div">© 2026 www.ShopiGo.com. All rights reserved.</div>
+            <div class="copyright-div"><i class="fa-regular fa-copyright"></i> 2026 www.ShopiGo.com. All rights reserved.</div>
         </div>
 
     </footer>
