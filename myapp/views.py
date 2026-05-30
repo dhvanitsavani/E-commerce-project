@@ -182,3 +182,6 @@ def create_password(request):
         return render(request, 'create-password.html', {'error_message': error_message})    
 
     return render(request, 'create-password.html')
+
+def sell_products(request):
+    return render(request, 'sell-products.html')
