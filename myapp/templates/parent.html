@@ -15,6 +15,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     {% block style %}{% endblock %}
+    <style>
+        
+
+    </style>
 </head>
 <body>
     {% block navbar %}
@@ -45,6 +49,61 @@
     {% endblock %}
     
     {% block content %}
+    {% endblock %}
+
+    {% block footer %}
+    <footer class="footer-section">
+        <button class="back-to-top-button">Back to top</button>
+        
+        <div class="footer-quick-links flex">
+            <div class="footer-part flex">
+                <h3>About</h3>
+                <a href="#">Contact Us</a>
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Blog</a>
+                <a href="#">ShopiGo Stories</a>
+                <a href="#">Investor Relations</a>
+            </div>
+            <div class="footer-part flex">
+                <h3>Make money with us</h3>
+                <a href="#">Sell products on ShopiGo</a>
+                <a href="#">Sell apps on ShopiGo</a>
+                <a href="#">Get ShopiGo bussiness membership</a>
+                <a href="#">Advertise your products</a>
+                <a href="#">Self-publish with us</a>
+            </div>
+            <div class="footer-part flex">
+                <h3>Help</h3>
+                <a href="#">Your Account</a>
+                <a href="#">Your Orders</a>
+                <a href="#">Payments</a>
+                <a href="#">Shippings</a>
+                <a href="#">Cancellation & Returns</a>
+                <a href="#">FAQ</a>
+                <a href="#">Customer Support</a>
+            </div>
+            <div class="footer-part flex">
+                <h3>Customer policies</h3>
+                <a href="#">Terms of Use</a>
+                <a href="#">Cancellation & Returns</a>
+                <a href="#">Security</a>
+                <a href="#">Privacy Policy</a>
+            </div> 
+        </div>
+        
+        <div class="sub-footer flex">
+            <div class="social-media-div flex">
+                <img src="{% static 'images/logo-1.png' %}" alt="Logo" class="logo">
+                <a href="#">Insta</a>
+                <a href="#">Twitter</a>
+                <a href="#">Facebook</a>
+                <a href="#">Youtube</a>
+            </div>
+            <div class="copyright-div">© 2026 www.ShopiGo.com. All rights reserved.</div>
+        </div>
+
+    </footer>
     {% endblock %}
 
     <script src="{% static 'js/app.js' %}"></script>

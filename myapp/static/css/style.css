@@ -3,7 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     color: #0a0a0a;
-    font-size: 18px;
+    font-size: 15px;
     font-family: 'Inter', sans-serif;
 }
 
@@ -205,6 +205,109 @@ body{
 
 .next{
     right: 25px;
+}
+
+/* ======================================================= Products Main Section ======================================================= */
+
+.products-section{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding-inline: 35px;
+    padding-block: 15px;
+}
+
+.product-card{
+    height: 415px;
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+}
+
+.product-card img{
+    height: 290px;
+    width: 100%;
+}
+
+.product-card .name-div{
+    height: 54px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    /* padding-block: 10px; */
+}
+
+.product-card .company-name{
+    font-size: 20px;
+}
+
+.product-card .name{
+    color: #333;
+    font-size: 15px;
+}
+
+.product-card .price{
+    font-size: 15px;
+    color: #111;
+    font-weight: bold;
+}
+
+/* ======================================================= Footer Section ======================================================= */
+
+.footer-section{
+    margin-block: 20px;
+}
+
+.footer-section *{
+    color: #fff;
+}
+
+.footer-section .back-to-top-button{
+    width: 100%;
+    background-color: #37475a;
+    padding: 15px;
+}
+
+.footer-section .footer-quick-links{
+    width: 100%;
+    background-color: #213143;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 100px;
+    padding-block: 30px 60px;
+}
+
+.footer-section .footer-quick-links .footer-part{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.footer-section .footer-quick-links h3{
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+
+.footer-section .footer-quick-links a{
+    font-size: 14px;
+}
+
+.footer-section .sub-footer{
+    background-color: #213143;
+    border-top: solid 1px #666;
+    flex-direction: column;
+    gap: 20px;
+    padding-block: 30px;
+}
+
+.footer-section .social-media-div{
+    gap: 20px;
+}
+
+.footer-section .logo{
+    height: 55px;
 }
 
 /* ======================================================= Login Section ======================================================= */

@@ -17,8 +17,9 @@
     {% endblock %}
 </head>
 <body>
-    {% block navbar %}
-    {% endblock %}
+    {% block navbar %}{% endblock %}
+    {% block footer %}{% endblock %}
+
     {% block content %}
     <section class="hero-section">
         <div class="hero-images">
@@ -30,7 +31,6 @@
         <button class="hero-slider-button prev">&#10094;</button>
         <button class="hero-slider-button next">&#10095;</button>
     </section>
-
     {% endblock %}
     
 </body>
